@@ -8,12 +8,11 @@ var sponsors = {
     eu: ['SRL', 'PLO', 'J&K'],
     rus: ['RusAuto', 'SBO']
 };
+const {cash, eu, rus} = sponsors;
 
 const calcCash = (cash) => cash.reduce( (a, b) => a + b);
 
-const money = calcCash(sponsors.cash);
-
-const {cash, eu, rus} = sponsors;
+const money = calcCash(cash);
 
 const makeBusiness = ({owner, director = 'Victor', cash, emp}) => {
     const sumSponsors = [...eu, ...rus, 'unexpected sponsor'];
