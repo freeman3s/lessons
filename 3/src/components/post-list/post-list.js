@@ -4,7 +4,7 @@ import PostListItem from '../post-list-item';
 import { ListGroup } from 'reactstrap';
 import './post-list.css'
 
-const PostList = ({posts, onDelete}) => {
+const PostList = ({posts, onDelete, onTogleImportant, onTogleLiked}) => {
 
     let elements = posts.filter( item => typeof item === 'object' );
 
@@ -15,6 +15,8 @@ const PostList = ({posts, onDelete}) => {
                 <PostListItem
                     {...itemProps}
                     onDelete={() => onDelete(id) }
+                    onTogleImportant={() => onTogleImportant(id) }
+                    onTogleLiked={() => onTogleLiked(id) }
                 />
             </li>
         )
